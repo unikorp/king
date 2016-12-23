@@ -3,6 +3,7 @@
 | Bug fix?      | yes/no
 | New feature?  | yes/no
 | Tests pass?   | yes/no
+| Doc written?  | yes/no
 | Fixed tickets | #... <!-- #-prefixed issue number(s), if any -->
 | License       | MIT
 
