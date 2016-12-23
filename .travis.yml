@@ -1,0 +1,13 @@
+sudo: required
+language: node_js
+
+node_js:
+  - '4'
+  - '5'
+  - '6'
+  - '7'
+
+before_install:
+  - npm install -g yarn
+
+script: yarn test
