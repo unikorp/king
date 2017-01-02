@@ -1,11 +1,10 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 import chai from 'chai';
-import sinon from 'sinon';
 
 import Home from './../../src/components/Home';
 
-var expect = chai.expect;
+const expect = chai.expect;
 
 describe('<Home />', () => {
   it('renders a title into <Home /> component', () => {

@@ -10,4 +10,6 @@ node_js:
 before_install:
   - npm install -g yarn
 
-script: yarn test
+script:
+  - yarn lint
+  - yarn test
