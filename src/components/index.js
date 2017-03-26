@@ -1,11 +1,15 @@
-import About from './About';
 import Core from './Core';
-import NotFound from './NotFound';
-import Overview from './Overview';
+import About from '../pages/About';
+import NotFound from '../pages/NotFound';
+import Overview from '../pages/Overview';
+import Informations from '../pages/Informations';
+import Cluster from '../pages/Cluster';
 
 export {
   About,
   Core,
   NotFound,
   Overview,
+  Informations,
+  Cluster,
 };

@@ -1,15 +1,15 @@
 import React, { PropTypes } from 'react';
 import { Link } from 'react-router';
 import { MuiThemeProvider } from 'material-ui/styles';
-import IconButton from 'material-ui/IconButton';
-import FlatButton from 'material-ui/FlatButton';
 import Menu from 'material-ui/svg-icons/navigation/menu';
 import NavigationClose from 'material-ui/svg-icons/navigation/close';
 import Home from 'material-ui/svg-icons/action/home';
 import Info from 'material-ui/svg-icons/action/info';
-import { AppBar, Drawer, MenuItem } from 'material-ui';
+
+import { AppBar, Drawer, MenuItem, IconButton, FlatButton, List, ListItem } from 'material-ui';
 
 const Core = ({ children, leftNavOpened, muiTheme, actions }) => (
+
   <MuiThemeProvider muiTheme={muiTheme}>
     <div>
       <AppBar
@@ -36,11 +36,80 @@ const Core = ({ children, leftNavOpened, muiTheme, actions }) => (
         />
 
         <MenuItem
-          leftIcon={<Home />}
+          rightIcon={<Home />}
           primaryText="Overview"
           containerElement={<Link to="/">Overview</Link>}
           onTouchTap={actions.toggleLeftNav}
         />
+        <List>
+          <ListItem
+            primaryText="Informations routes"
+            onTouchTap={actions.toggleLeftNav}
+            containerElement={<Link to="/informations">Informations</Link>}
+            nestedItems={[
+              <ListItem
+                key={1}
+                primaryText="Retrieve node information"
+              />,
+              <ListItem
+                key={2}
+                primaryText="Retrieve node status"
+              />,
+            ]}
+          />
+        </List>
+        <List>
+          <ListItem
+            primaryText="Cluster"
+            onTouchTap={actions.toggleLeftNav}
+            containerElement={<Link to="/cluster">Cluster</Link>}
+            nestedItems={[
+              <ListItem
+                key={1}
+                primaryText="Cluster information"
+              />,
+              <ListItem
+                key={2}
+                primaryText="Retrieve cluster status"
+              />,
+              <ListItem
+                key={3}
+                primaryText="Forcibly remove a node"
+              />,
+            ]}
+          />
+        </List>
+        <List>
+          <ListItem
+            primaryText="API Object"
+            nestedItems={[
+              <ListItem
+                key={1}
+                primaryText="Add API"
+              />,
+              <ListItem
+                key={2}
+                primaryText="Retrieve API"
+              />,
+              <ListItem
+                key={3}
+                primaryText="List APIs"
+              />,
+              <ListItem
+                key={3}
+                primaryText="Update API"
+              />,
+              <ListItem
+                key={3}
+                primaryText="Update Or Create API"
+              />,
+              <ListItem
+                key={3}
+                primaryText="Delete API"
+              />,
+            ]}
+          />
+        </List>
       </Drawer>
 
       <main style={{ marginLeft: '20px', fontFamily: muiTheme.fontFamily }}>
